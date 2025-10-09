@@ -1,0 +1,10 @@
+footer {
+    font-weight: bold;
+    font-family: Alata;
+    white-space: nowrap;
+}
+
+iframe {
+    height: 600px;
+    border: none;
+}
