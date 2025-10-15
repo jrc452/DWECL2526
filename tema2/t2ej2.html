@@ -4,16 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="t2ej2.css">
+    <title>Ejercicio 2.2</title>
 </head>
 
 <body>
-    <!--FUNCIONES FLECHA (ARROW FUNCTIONS) Y MAP
+    <main class="card" role="main">
+        <div>
+            <label for="a">Número A</label>
+            <input id="a" type="number" step="any" placeholder="Ej. 12.5" inputmode="decimal">
+        </div>
 
-    Crear una calculadora en HTML con funciones flecha
-    y las operaciones básicas (+ , * , - , / ).
-    Utilizar dos parámetros de entrada y 4 botones. 
-    En el script "t2ej2.js"
-    -->
+
+        <div style="margin-top:10px">
+            <label for="b">Número B</label>
+            <input id="b" type="number" step="any" placeholder="Ej. 3" inputmode="decimal">
+        </div>
+
+
+        <div class="buttons" style="margin-top:14px">
+            <button id="addBtn" class="op" aria-label="Sumar">+</button>
+            <button id="subBtn" class="op" aria-label="Restar">−</button>
+            <button id="mulBtn" class="op" aria-label="Multiplicar">×</button>
+            <button id="divBtn" class="op" aria-label="Dividir">÷</button>
+        </div>
+
+
+        <div id="result" class="result" aria-live="polite">Resultado: —</div>
+    </main>
 
     <script type="text/javascript" src="t2ej2.js"></script>
 </body>

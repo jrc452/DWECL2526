@@ -1,10 +1,12 @@
-//FUNCIONES FLECHA (ARROW FUNCTIONS) Y MAP
+const numeroAleatorio = (max) => Math.floor(Math.random() * max) + 1;
 
-/*
- Definir una función de flecha que reciba un valor entero
- y retorne otro valor entero aleatorio comprendido entre 1
- y el valor que llega como parámetro. Asignar dicha función
- de flecha a una constante para permitir llamarla en sucesivas
- ocasiones
-*/
-
+function mostrarAleatorio() {
+    const valor = parseInt(document.getElementById('valor').value);
+    if (isNaN(valor) || valor <= 0)
+        document.getElementById('resultado').textContent = "Por favor, introduce un número entero positivo.";
+    else {
+        const aleatorio = numeroAleatorio(valor);
+        document.getElementById('resultado').textContent =
+            `Número aleatorio entre 1 y ${valor}: ${aleatorio}`;
+    }
+}
