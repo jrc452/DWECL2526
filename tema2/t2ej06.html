@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="t2ej02.css">
+    <title>Ejercicio 2.06</title>
+</head>
+
+<body>
+    <main class="card" role="main">
+        <div>
+            <label for="a">Número A</label>
+            <input id="a" type="number" step="any" placeholder="Ej. 12.5" inputmode="decimal">
+        </div>
+
+
+        <div style="margin-top:10px">
+            <label for="b">Número B</label>
+            <input id="b" type="number" step="any" placeholder="Ej. 3" inputmode="decimal">
+        </div>
+
+
+        <div class="buttons" style="margin-top:14px">
+            <button id="mulBtn" class="op" aria-label="Multiplicar">×</button>
+            <button id="divBtn" class="op" aria-label="Dividir">÷</button>
+        </div>
+
+
+        <div id="result" class="result" aria-live="polite">Resultado: —</div>
+    </main>
+
+    <script type="text/javascript" src="t2ej02.js"></script>
+</body>
