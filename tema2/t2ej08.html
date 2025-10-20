@@ -8,7 +8,13 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="t2ej08.js"></script>
+    <button onclick="showUrl()">Mostrar URL</button>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function showUrl() {
+            document.getElementById("result").textContent = `La URL de esta página es: ${window.location.href}`;
+        }
+    </script>
 </body>
 
 </html>
