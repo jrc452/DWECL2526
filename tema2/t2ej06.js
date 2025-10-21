@@ -5,17 +5,17 @@ const resultEl = document.getElementById('result');
 
 // --- Manejadores para cada botón ---
 function handleMul() {
-    const a = toNumber(inputA.value);
-    const b = toNumber(inputB.value);
+    const a = parseFloat(inputA.value);
+    const b = parseFloat(inputB.value);
     resultEl.textContent = `Resultado: ${a * b}`;
     resultEl.style.color = '';
 };
 
 function handleDiv() {
-    const a = toNumber(inputA.value);
-    const b = toNumber(inputB.value);
+    const a = parseFloat(inputA.value);
+    const b = parseFloat(inputB.value);
     if (b !== 0) {
-        resultEl.textContent = `Resultado: ${a * b}`;
+        resultEl.textContent = `Resultado: ${a / b}`;
         resultEl.style.color = '';
     } else {
         resultEl.textContent = `Error: ${error}`;
