@@ -1,13 +1,14 @@
+document.getElementById("p1").textContent = "Si no aparace el dialogo de abrir un archivo, intenta refrescar la página.";
 const fileInput = document.getElementById("fileInput");
 fileInput.hidden = true;
 window.onload = function () {
-    document.getElementById("p0").hidden = true;
     fileInput.click();
 }
 
 let filename;
 
 function update() {
+
     filename = fileInput.files[0].name;
 
     document.getElementById("p1").textContent = `El archivo elegido para ver es: ${filename}`;
