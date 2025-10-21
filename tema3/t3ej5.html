@@ -9,7 +9,15 @@
 
 <body>
     <script text="text/javascript">
-
+        function countOccurrences(string, substring) {
+            if (substring.length === 0) return 0;
+            /*
+            const regex = new RegExp(substring.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+            const coincidences = string.match(regex);
+            return coincidences ? coincidences.length : 0;
+            */
+            return string.split(substring).length - 1;
+        }
     </script>
 </body>
 

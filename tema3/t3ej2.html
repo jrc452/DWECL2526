@@ -19,7 +19,7 @@
                     const domain = email.split('@')[1];
                     document.getElementById("protected").textContent = `${username}...@${domain}`;
                 } else
-                    document.getElementById("protected").textContent = email;
+                    document.getElementById("protected").textContent = "De poner un usuario antes del símbolo '@'";
             } else
                 document.getElementById("protected").textContent = "No es un correo electronico";
         }

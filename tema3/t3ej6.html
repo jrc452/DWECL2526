@@ -9,7 +9,15 @@
 
 <body>
     <script text="text/javascript">
-
+        function findWord(string, word) {
+            const regex = new RegExp(word, "g");
+            const coincidences = string.match(regex);
+            const amount = (coincidences || []).length;
+            if (amount === 1)
+                return `La palabra ${word} se encontró ${amount} vez`;
+            else
+                return `La palabra ${word} se encontró ${amount} veces`;
+        }
     </script>
 </body>
 
