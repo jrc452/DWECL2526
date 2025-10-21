@@ -1,7 +1,23 @@
-const filename = "t2ej02.css";
+const fileInput = document.getElementById("fileInput");
+fileInput.hidden = true;
+window.onload = function () {
+    fileInput.click();
+}
 
-document.getElementById("p1").textContent += filename;
-console.log(document.getElementById("p1").textContent);
+let filename;
+
+function update() {
+    filename = fileInput.files[0].name;
+
+    document.getElementById("p1").textContent = `El archivo elegido para ver es: ${filename}`;
+    console.log(document.getElementById("p1").textContent);
+
+    if (getExtension(filename) !== "")
+        document.getElementById("p2").textContent = `Su extensión es: ${getExtension(filename)}`;
+    else
+        document.getElementById("p2").textContent = "Este archivo no tiene extensión";
+    console.log(document.getElementById("p2").textContent);
+}
 
 function getExtension(filename) {
     const parts = filename.split('.');
@@ -9,6 +25,3 @@ function getExtension(filename) {
         return '';
     return parts.pop();
 }
-
-document.getElementById("p2").textContent += getExtension(filename);
-console.log(document.getElementById("p2").textContent);
