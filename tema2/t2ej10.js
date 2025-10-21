@@ -1,6 +1,7 @@
 const fileInput = document.getElementById("fileInput");
 fileInput.hidden = true;
 window.onload = function () {
+    document.getElementById("p0").hidden = true;
     fileInput.click();
 }
 
