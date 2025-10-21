@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.2</title>
+</head>
+
+<body>
+    <p>Introduce tu correo electronico: <input id="email" type="text" /></p>
+    <button onclick="protectEmail(email.value)">Proteger correo</button>
+    <p id="protected"></p>
+    <script text="text/javascript">
+        function protectEmail(email) {
+            if (typeof email === String || email.includes('@')) {
+                if (!email.startsWith('@')) {
+                    const username = email.split('@')[0].length >= 6 ? email.split('@')[0].substring(0, 3) : email.split('@')[0].substring(0, 1);
+                    const domain = email.split('@')[1];
+                    document.getElementById("protected").textContent = `${username}...@${domain}`;
+                } else
+                    document.getElementById("protected").textContent = email;
+            } else
+                document.getElementById("protected").textContent = "No es un correo electronico";
+        }
+    </script>
+</body>
+
+</html>

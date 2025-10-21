@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.1</title>
+</head>
+
+<body>
+    <div>
+        Introduce una cadena: <input id="string" type="text" />
+    </div>
+    <div>
+        Inicio: <input id="start" type="number" step="1" />
+    </div>
+    <div>
+        Cantidad: <input id="amount" type="number" step="1" />
+    </div>
+    <button onclick="extrarctCharsSlice(string.value, parseInt(start.value), parseInt(amount.value))">Extraer
+        caracteres</button>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        const result = document.getElementById("result");
+
+        function extrarctCharsSlice(string, start, amount) {
+            const s = document.getElementById("string").value;
+            if (s !== "" && !isNaN(start) && !isNaN(amount)) {
+                result.textContent = s.slice(start, start + amount);
+            } else {
+                if (s === "")
+                    alert("Debes introducir una cadena")
+                if (isNaN(start))
+                    alert("Debes introducir el inicio")
+                if (isNaN(amount))
+                    alert("Debes introducir la cantidad")
+            }
+        }
+    </script>
+</body>
+
+</html>
