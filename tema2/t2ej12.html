@@ -8,12 +8,20 @@
 </head>
 
 <body>
+    <input id="n1" type="int" step="1">
+    <input id="n2" type="int" step="1">
+    <br>
+    <button onclick="addNumbers(parseInt(n1.value), parseInt(n2.value))">Verificar números dados</button>
+    <p id="result"></p>
     <script type="text/javascript">
         function addNumbers(num1, num2) {
+            let result = 0;
+            const resultElement = document.getElementById("result");
             if (num1 === num2)
-                return 3 * (num1 + num2);
+                result = 3 * (num1 + num2);
             else
-                return num1 + num2;
+                result = num1 + num2;
+            resultElement.textContent = result;
         }
     </script>
 </body>

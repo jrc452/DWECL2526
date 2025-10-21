@@ -8,12 +8,18 @@
 </head>
 
 <body>
+    <input id="n" type="int" step="1">
+    <button onclick="calculateDifference(parseInt(n.value))">Obtener diferencia</button>
+    <p id="result"></p>
     <script type="text/javascript">
         function calculateDifference(n) {
+            let result = 0;
+            const resultElement = document.getElementById("result");
             if (n <= 19)
-                return 19 - n;
+                result = 19 - n;
             else
-                return (n - 19) * 3;
+                result = (n - 19) * 3;
+            resultElement.textContent = result;
         }
     </script>
 </body>

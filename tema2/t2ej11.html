@@ -14,11 +14,13 @@
     <script type="text/javascript">
         const resultElement = document.getElementById("result");
         function difference(num) {
+            let result = 0;
             const diff = num - 13;
             if (num > 13)
-                resultElement.innerHTML = 2 * diff;
+                result = 2 * diff;
             else
-                resultElement.innerHTML = diff;
+                result = diff;
+            resultElement.innerHTML = result;
         }
     </script>
 </body>

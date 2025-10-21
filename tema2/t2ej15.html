@@ -8,11 +8,20 @@
 </head>
 
 <body>
+    <input id="n1" type="int" step="1">
+    <input id="n2" type="int" step="1">
+    <br>
+    <button onclick="isInRange(parseInt(n1.value), parseInt(n2.value))">Verificar números</button>
+    <p id="result"></p>
     <script type="text/javascript">
         function isInRange(num1, num2) {
+            const resultElement = document.getElementById("result");
             const isNum1inRange = num1 >= 50 && num1 <= 99;
             const isNum2inRange = num2 >= 50 && num2 <= 99;
-            return isNum1inRange || isNum2nRange;
+            if (isNum1inRange || isNum2inRange)
+                resultElement.textContent = "Verdadero";
+            else
+                resultElement.textContent = "Falso";
         }
     </script>
 </body>

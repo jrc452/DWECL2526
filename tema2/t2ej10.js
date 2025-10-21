@@ -1,4 +1,4 @@
-const filename = "\styles.css";
+const filename = "t2ej02.css";
 
 document.getElementById("p1").textContent += filename;
 console.log(document.getElementById("p1").textContent);

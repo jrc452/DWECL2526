@@ -8,12 +8,19 @@
 </head>
 
 <body>
+    <input id="n1" type="int" step="1">
+    <input id="n2" type="int" step="1">
+    <br>
+    <button onclick="verifyNumbers(parseInt(n1.value), parseInt(n2.value))">Verificar números</button>
+    <p id="result"></p>
     <script type="text/javascript">
         function verifyNumbers(num1, num2) {
-            if (num1 === 50 || num2 === 50 || num1 + num2 === 50)
-                return true;
+            const is50 = (num1 === 50 || num2 === 50 || num1 + num2 === 50)
+            const resultElement = document.getElementById("result");
+            if (is50)
+                resultElement.textContent = "Verdadero";
             else
-                return false;
+                resultElement.textContent = "Falso";
         }
     </script>
 </body>
