@@ -8,21 +8,31 @@
 </head>
 
 <body>
+    <p>Introduce una cadena: <input id="string" type="text" /></p>
+    <button onclick="capitaliseWords(string.value)">Capitalizar palabras</button>
+    <p id="result"></p>
     <script text="text/javascript">
-        console.log(capitaliseWords("Como capitalizar cada palabra así"));
+        const result = document.getElementById("result");
+
         function capitaliseWords(string) {
-            const words = string.split(' ');
-            const capitalise = "";
+            if (string !== "") {
+                let stringBuilder = "";
+                const words = string.split(' ');
+                const capitalise = "";
 
-            for (i in words) {
-                let word = words[i];
-                if (word.length > 1)
-                    words[i] = `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`;
-                else
-                    words[i] = word.toUpperCase();
-            }
+                for (i in words) {
+                    let word = words[i];
+                    if (word.length > 1)
+                        stringBuilder += `${word.slice(0, 1).toUpperCase()}${word.slice(1)}`;
+                    else
+                        stringBuilder += word.toUpperCase();
 
-            return words.toString().replaceAll(',', ' ');
+                    if (i < words.length - 1)
+                        stringBuilder += " ";
+                }
+                result.textContent = stringBuilder;
+            } else
+                result.textContent = null;
         }
     </script>
 </body>

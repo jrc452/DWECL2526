@@ -8,14 +8,32 @@
 </head>
 
 <body>
+    <p>Introduce una cadena: <input id="string" type="text" /></p>
+    <p>Introduce una palabra para insertar a una cadena: <input id="word" type="text" /></p>
+    <p>¿Y a qué indice?: <input id="index" step="1" type="number" /></p>
+    <button onclick="insertWord(string.value, word.value, parseInt(index.value))">Insertar palabra</button>
+    <hr>
+    <p id="result"></p>
     <script text="text/javascript">
+        const result = document.getElementById("result");
         function insertWord(string, word, index = 1) {
-            if (index < 0) index = 0;
-
-            const firstHalf = string.slice(0, index);
-            const lastHalf = string.slice(index);
-
-            return `${firstHalf}${word}${lastHalf}`;
+            if (string != "" && word != "" && !isNaN(index)) {
+                if (index < 1) index = 1;
+                const firstHalf = string.slice(0, index);
+                const lastHalf = string.slice(index);
+                if (string.charAt(index) == ' ')
+                    word = ` ${word}`;
+                else if (string.charAt(index - 1) == ' ')
+                    word = `${word} `;
+                result.textContent = `${firstHalf}${word}${lastHalf}`;
+            } else {
+                if (string == "")
+                    alert("Debes introducir una cadena");
+                if (word == "")
+                    alert("Debes introducir una palabra");
+                if (isNaN(index))
+                    alert("Debes introducir el índice");
+            }
         }
     </script>
 </body>

@@ -8,15 +8,15 @@
 </head>
 
 <body>
+    <p>Introduce una cadena: <input id="string" type="text" /></p>
+    <p>Introduce una subcadena para buscar: <input id="substring" type="text" /></p>
+    <button onclick="countOccurrences(string.value, substring.value)">Contar apariencias de la subcadena</button>
+    <hr>
+    <p id="result"></p>
     <script text="text/javascript">
         function countOccurrences(string, substring) {
-            if (substring.length === 0) return 0;
-            /*
-            const regex = new RegExp(substring.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-            const coincidences = string.match(regex);
-            return coincidences ? coincidences.length : 0;
-            */
-            return string.split(substring).length - 1;
+            if (substring.length === 0) result.textContent = 0;
+            document.getElementById("result").textContent = string.split(substring).length - 1;
         }
     </script>
 </body>

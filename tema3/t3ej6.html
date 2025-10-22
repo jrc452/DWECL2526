@@ -8,15 +8,21 @@
 </head>
 
 <body>
+    <p>Introduce una cadena: <input id="string" type="text" /></p>
+    <p>Introduce una palabra para buscar: <input id="word" type="text" /></p>
+    <button onclick="findWord(string.value, word.value)">Buscar palabra</button>
+    <hr>
+    <p id="result"></p>
     <script text="text/javascript">
         function findWord(string, word) {
+            const result = document.getElementById("result");
             const regex = new RegExp(word, "g");
             const coincidences = string.match(regex);
             const amount = (coincidences || []).length;
             if (amount === 1)
-                return `La palabra ${word} se encontró ${amount} vez`;
+                result.textContent = `La palabra ${word} se encontró ${amount} vez`;
             else
-                return `La palabra ${word} se encontró ${amount} veces`;
+                result.textContent = `La palabra ${word} se encontró ${amount} veces`;
         }
     </script>
 </body>
