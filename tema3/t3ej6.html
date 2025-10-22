@@ -19,10 +19,9 @@
             const regex = new RegExp(word, "g");
             const coincidences = string.match(regex);
             const amount = (coincidences || []).length;
-            if (amount === 1)
-                result.textContent = `La palabra ${word} se encontró ${amount} vez`;
-            else
-                result.textContent = `La palabra ${word} se encontró ${amount} veces`;
+            result.textContent = `La palabra «${word}» se encontró ${amount}`;
+            if (amount === 1) result.textContent += ` vez`;
+            else result.textContent += ` veces`;
         }
     </script>
 </body>
