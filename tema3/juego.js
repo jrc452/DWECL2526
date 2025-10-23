@@ -70,16 +70,14 @@ function pointsUp(p) {
     txtP1Points.textContent = `Puntos (P1): ${p1Points}`;
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
-    if ((p1Done && p2Done && p3Done) && !gameOver) {
-        gameOver = true;
-        whoWon();
-    }
+    if ((p1Done && p2Done && p3Done) == true && gameOver == false) whoWon();
 }
 
 function whoWon() {
+    gameOver = true;
     let sortScore = [p1Points, p2Points, p3Points];
-    sortScore.sort();
-    if (parseInt(sortScore[0] == p1Points)) alert("El ganador es JUGADOR 1");
-    else if (parseInt(sortScore[0] == p2Points)) alert("El ganador es JUGADOR 2");
-    else if (parseInt(sortScore[0] == p2Points)) alert("El ganador es JUGADOR 3");
+    sortScore.sort(function (a, b) { return a - b });
+    if (parseInt(sortScore[2]) == p1Points) alert("El ganador es JUGADOR 1");
+    if (parseInt(sortScore[2]) == p2Points) alert("El ganador es JUGADOR 2");
+    if (parseInt(sortScore[2]) == p3Points) alert("El ganador es JUGADOR 3");
 }
