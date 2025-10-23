@@ -29,9 +29,6 @@ function guessPswd(w, p) {
             let isVocal = (c.toLowerCase() == ("a" || "e" || "i" || "o" || "u"));
             if (parseInt(c) != c) {
                 if (c.toUpperCase() == password.slice(b, b + 1) || c.toLowerCase() == password.slice(b, b + 1)) {
-                    console.log(`${c.toUpperCase()} == ${password.slice(b, b + 1)} || ${c.toLowerCase()} == ${password.slice(b, b + 1)}`);
-                    console.log(c.toUpperCase() == password.slice(b, b + 1));
-                    console.log(c.toLowerCase() == password.slice(b, b + 1));
                     if (isVocal) pointsUp(1);
                     else pointsUp(2);
                 }
