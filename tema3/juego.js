@@ -45,7 +45,7 @@ function checkChar(c) {
     let isVocal = (c.toLowerCase == ('a' || 'e' || 'i' || 'o' || 'u'));
     do {
         if (!isNaN(c)) {
-            if (c.toUpperCase == txtPassword.slice(i, i + 1) || c.toLowerCase == txtPassword.slice(i, i + 1)) {
+            if (c.toUpperCase == txtPassword.toUpperCase.slice(i, i + 1) || c.toLowerCase == txtPassword.toLowerCase.slice(i, i + 1)) {
                 if (isVocal) pointsUp(1);
                 else pointsUp(2);
             }
