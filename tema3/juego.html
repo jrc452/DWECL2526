@@ -2,25 +2,23 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de cadenas</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego de cadenas</title>
 </head>
 
 <body onload="start()">
-    <h1>Juego de cadenas</h1>
-    <h2 id="p1Points">Puntos (P1): NaN</h2>
-    <h2 id="p2Points">Puntos (P2): NaN</h2>
-    <h2 id="p3Points">Puntos (P3): NaN</h2>
-    <p>¿Jugador 1, cual es la contraseña?: <input id="word1" type="text" /><button id="btn1"
-            onclick="guessPswd(word1.value, 1)">Comprobar</button></p>
-    <p>¿Jugador 2, cual es la contraseña?: <input id="word2" type="text" /><button id="btn2"
-            onclick="guessPswd(word2.value, 2)">Comprobar</button></p>
-    <p>¿Jugador 3, cual es la contraseña?: <input id="word3" type="text" /><button id="btn3"
-            onclick="guessPswd(word3.value, 3)">Comprobar</button></p>
-    <hr>
-    <p id="winner"></p>
-    <script src="juego.js"></script>
+        <h1>Juego de cadenas</h1>
+        <h2 id="p1Points">Puntos (P1): NaN</h2>
+        <h2 id="p2Points">Puntos (P2): NaN</h2>
+        <h2 id="p3Points">Puntos (P3): NaN</h2>
+        <p>¿Jugador 1, cual es la contraseña?: <input id="word1" type="text" /><button id="btn1"
+                        onclick="guessPswd(word1.value, 1)">Comprobar</button></p>
+        <p>¿Jugador 2, cual es la contraseña?: <input id="word2" type="text" /><button id="btn2"
+                        onclick="guessPswd(word2.value, 2)">Comprobar</button></p>
+        <p>¿Jugador 3, cual es la contraseña?: <input id="word3" type="text" /><button id="btn3"
+                        onclick="guessPswd(word3.value, 3)">Comprobar</button></p>
+        <script src="juego.js"></script>
 </body>
 
 </html>
