@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de cadenas</title>
+</head>
+
+<body onload="start()">
+    <h1>Juego de cadenas</h1>
+    <h2 id="p1Points">Puntos (P1): NaN</h2>
+    <h2 id="p2Points">Puntos (P2): NaN</h2>
+    <h2 id="p3Points">Puntos (P3): NaN</h2>
+    <p>¿Cual es la contraseña?: <input id="word" type="text" /><button
+            onclick="guessPswd(word.value)">Comprobar</button></p>
+    <p id="password">L4ultimavezKtelod1go</p>
+    <hr>
+    <table>
+        <thead>
+            <th>Caracter</th>
+            <th>Puntos</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>V</th>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>e</th>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>z</th>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>t</th>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>3</td>
+            </tr>
+            <tr>
+                <th>a</th>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <p id="player"></p>
+    <script src="juego.js"></script>
+</body>
+
+</html>
