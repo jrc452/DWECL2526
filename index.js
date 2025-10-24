@@ -25,5 +25,12 @@ function openFrame(url) {
         height: '360px',
         margin: '25px 0 25px 0',
     }, 1000);
-    setTimeout(() => isOpen = true, 1000);
+    $("header").animate({
+        opacity: '0%',
+        height: '0px',
+    }, 1000);
+    setTimeout(() => {
+        isOpen = true;
+        document.getElementById("head").style.display = 'none';
+    }, 1000);
 }

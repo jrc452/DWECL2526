@@ -10,6 +10,7 @@ body,
 
 .container-container {
     height: 100vh;
+    display: grid;
     justify-content: center;
     align-content: center;
 }
@@ -22,6 +23,7 @@ nav {
     border-radius: 25px;
     text-shadow: 4px 4px 2px #0033cc;
     box-shadow: 4px 4px 2px #0033cc;
+    display: block;
 }
 
 iframe {
