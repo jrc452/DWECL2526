@@ -27,6 +27,7 @@ function openFrame(url) {
     }, 1000);
     $("header").animate({
         opacity: '0%',
+        padding: '0%',
         height: '0px',
     }, 1000);
     setTimeout(() => {

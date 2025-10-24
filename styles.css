@@ -15,11 +15,15 @@ body,
     align-content: center;
 }
 
+header {
+    line-height: 3mm;
+}
+
 header,
 nav {
     text-align: center;
     background-color: #0066ff;
-    padding: 25px;
+    padding: 10px;
     border-radius: 25px;
     text-shadow: 4px 4px 2px #0033cc;
     box-shadow: 4px 4px 2px #0033cc;
@@ -49,27 +53,17 @@ nav a {
 }
 
 footer {
+    font-size: small;
+    text-transform: uppercase;
+    letter-spacing: 0.4ch;
     margin: 20px;
     text-align: center;
     font-weight: bold;
-    font-family: Alata;
     white-space: nowrap;
+    opacity: 50%;
 }
 
 .container {
     max-width: 300mm;
     height: auto;
 }
-
-
-/*
-footer {
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-iframe {
-    height: 600px;
-    border: none;
-}
-*/
