@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll('a.btn');
-const iframe = document.getElementById('iframe');
+const iframe = document.getElementById('ejFrame');
 let isOpen = false;
 
 buttons.forEach(button => {
@@ -20,9 +20,8 @@ buttons.forEach(button => {
 });
 
 function openFrame(url) {
-    let _iframe = $("#iframe");
-    _iframe.animate({
-        height: '360px',
+    $("iframe").animate({
+        height: '480px',
         margin: '25px 0 25px 0',
     }, 1000);
     $("header").animate({
@@ -30,6 +29,7 @@ function openFrame(url) {
         padding: '0%',
         height: '0px',
     }, 1000);
+    $("nav h4").animate({ 'line-height': '0', }, 1000);
     setTimeout(() => {
         isOpen = true;
         document.getElementById("head").style.display = 'none';

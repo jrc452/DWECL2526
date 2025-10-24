@@ -1,18 +1,14 @@
-body,
-.container-container {
+body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #0066cc;
-    font-family: Alata;
-    color: white;
-}
-
-.container-container {
     height: 100vh;
     display: grid;
     justify-content: center;
     align-content: center;
+    background-color: #0066cc;
+    font-family: Alata;
+    color: white;
 }
 
 header {
@@ -28,6 +24,10 @@ nav {
     text-shadow: 4px 4px 2px #0033cc;
     box-shadow: 4px 4px 2px #0033cc;
     display: block;
+}
+
+nav h4 {
+    line-height: 10mm;
 }
 
 iframe {
