@@ -21,8 +21,9 @@ buttons.forEach(button => {
 
 function openFrame(url) {
     $("iframe").animate({
-        height: '480px',
-        margin: '25px 0 25px 0',
+        height: '450px',
+        margin: '6px',
+        padding: '12px',
     }, 1000);
     $("header").animate({
         opacity: '0%',
