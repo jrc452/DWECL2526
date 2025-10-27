@@ -70,7 +70,7 @@ function pointsUp(p) {
     txtP1Points.textContent = `Puntos (P1): ${p1Points}`;
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
-    if ((p1Done && p2Done && p3Done) == true && gameOver == false) whoWon();
+    if ((p1Done && p2Done && p3Done) && !gameOver) whoWon();
 }
 
 function whoWon() {
