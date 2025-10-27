@@ -5,7 +5,7 @@ let p3Points = 0;
 const txtP1Points = document.getElementById("p1Points");
 const txtP2Points = document.getElementById("p2Points");
 const txtP3Points = document.getElementById("p3Points");
-const password = "L4ultimavezKtelod1go";
+const password = "j0taR3yC4lCu4tr0C1nc0S315";
 
 let p1Done = false;
 let p2Done = false;
