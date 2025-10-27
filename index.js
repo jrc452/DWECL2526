@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll('a.btn');
+const buttons = document.querySelectorAll('nav a');
 const iframe = document.getElementById('ejFrame');
 let isOpen = false;
 
