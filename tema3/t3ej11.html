@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+
+<body>
+    <div>
+        <p id="yourArray">Array: </p>
+    </div>
+    <hr>
+    <div>
+        <p id="result"></p>
+    </div>
+    <script type="text/javascript">
+        let array = [];
+        let input = parseInt(1);
+        let result = 0;
+
+        let i = 0;
+        do {
+            input = parseInt(prompt("Introduzca un número:"));
+            if (input > 0 && !isNaN(input)) {
+                array[i] = input;
+                i++;
+            }
+        } while (input > 0 && !isNaN(input));
+
+        document.getElementById("yourArray").textContent += array;
+        document.getElementById("result").textContent = array.reduce(function (accumulator, currentValue) {
+            return accumulator * currentValue;
+        });
+    </script>
+</body>
+
+</html>

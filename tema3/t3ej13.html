@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script type="text/javascript">
+        let array = [];
+        let input = "A";
+
+        let i = 0;
+        do {
+            input = prompt("Introduzca un palabra:");
+            if (input != ("" && " ")) {
+                array[i] = input;
+                i++;
+            }
+        } while (input != ("" && " "));
+
+        document.getElementById("result").textContent = array.join(" ");
+    </script>
+</body>
+
+</html>

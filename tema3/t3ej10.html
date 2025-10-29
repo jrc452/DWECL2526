@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8a</title>
+</head>
+
+<body>
+    <p>FECHA 1: <input id="date1" type="date" /></p>
+    <p>FECHA 2: <input id="date2" type="date" /></p>
+    <button onclick="diffDays(date1.value, date2.value)">Diferenciar</button>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function diffDays(d1, d2) {
+            if ((d1 && d2) != "") {
+                d1 = new Date(d1).getTime();
+                d2 = new Date(d2).getTime();
+                const millisecondsPerDay = 1000 * 60 * 60 * 24;
+                if (d1 > d2)
+                    document.getElementById("result").textContent = Math.ceil((d1 - d2) / millisecondsPerDay);
+                else
+                    document.getElementById("result").textContent = Math.ceil((d2 - d1) / millisecondsPerDay);
+            }
+        }
+    </script>
+</body>
+
+</html>

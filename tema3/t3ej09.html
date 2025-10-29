@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <p id="yourArray">Array: </p>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        let array = [];
+        let input = parseInt(1);
+        let max = Number.MIN_SAFE_INTEGER;
+        let i = 0;
+        do {
+            input = parseInt(prompt("Introduzca un número:"));
+            if (input > 0 && !isNaN(input)) {
+                array[i] = input;
+                i++;
+            }
+        } while (input > 0 && !isNaN(input));
+
+        document.getElementById("yourArray").textContent += array;
+        array.forEach(i => {
+            if (i > max) max = i;
+        });
+        document.getElementById("result").textContent = `Su valor máximo es ${max}`;
+    </script>
+</body>
+
+</html>

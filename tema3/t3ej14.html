@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8b</title>
+</head>
+
+<body>
+    <div>
+        <p id="yourArray">Array: </p>
+    </div>
+    <hr>
+    <div>
+        <p id="result"></p>
+    </div>
+    <script type="text/javascript">
+        let array = [];
+        let input = ".";
+
+        let i = 0;
+        do {
+            input = prompt("Introduzca un elemento:");
+            if (input != ("" && " ")) {
+                array[i] = input;
+                i++;
+            }
+        } while (input != ("" && " "));
+
+        document.getElementById("yourArray").textContent += array;
+
+        document.getElementById("result").textContent = findMostFrequentElement(array);
+
+        function findMostFrequentElement(array) {
+            if (arr.length === 0) return null;
+
+            const freq = {};
+            for (const elem of array) freq[elem] = (freq[elem] || 0) + 1;
+
+            let mostFreq = null, maxFreq = 0;
+
+            for (const elem in freq)
+                if (freq[elem] > maxFreq) {
+                    maxFreq = freq[elem];
+                    mostFreq = elem;
+                }
+
+            return mostFreq;
+        }
+    </script>
+</body>
+
+</html>

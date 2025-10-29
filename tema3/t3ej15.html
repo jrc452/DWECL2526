@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 31 (2)</title>
+</head>
+
+<body>
+    <div>
+        <p id="yourArray">Array: </p>
+    </div>
+    <hr>
+    <div>
+        <p id="result"></p>
+    </div>
+    <script type="text/javascript">
+        let array = [];
+        let input = ".";
+
+        let i = 0;
+        do {
+            input = prompt("Introduzca un elemento:");
+            if (input != ("" && " ")) {
+                array[i] = input;
+                i++;
+            }
+        } while (input != ("" && " "));
+
+        document.getElementById("yourArray").textContent += array;
+
+        document.getElementById("result").textContent = removeElement(array, prompt(`${array}\n¿A que elemento vas a borrar?:`));
+
+        function removeElement(arr, elem2remove) {
+            return arr.filter(elem => elem !== elem2remove);
+        }
+    </script>
+</body>
+
+</html>

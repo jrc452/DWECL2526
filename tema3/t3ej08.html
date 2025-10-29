@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4b</title>
+</head>
+
+<body>
+    <div>
+        <p>Año: <input type="number" step="1" id="year" /></p>
+        <p>Mes: <input type="number" step="1" id="month" /></p>
+        <button onclick="getDayInMonth(parseInt(year.value), parseInt(month.value))">Obtener días</button>
+    </div>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        document.getElementById("year").value = parseInt(new Date().getFullYear());
+        document.getElementById("month").value = parseInt(new Date().getMonth() + 1);
+        function getDayInMonth(year, month) {
+            if (year = null) year = parseInt(new Date().getFullYear());
+            if (month < 1 || month == null) month = 1;
+            else if (month > 12) month = 12;
+            document.getElementById("result").textContent = `${new Date(year, month, 0).getDate()} días`;
+        }
+    </script>
+</body>
+
+</html>
