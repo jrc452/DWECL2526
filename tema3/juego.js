@@ -11,6 +11,9 @@ const password = "j0taR3yC4lCu4tr0C1nc0S315";
 let p1Done = false;
 let p2Done = false;
 let p3Done = false;
+let p1Guessed = false;
+let p2Guessed = false;
+let p3Guessed = false;
 let gameOver = false;
 
 function start() {
@@ -53,17 +56,17 @@ function wordSpliter(w) {
 
 function pointsUp(p) {
     if (player == 1) {
-        if (document.getElementById("word1").value != password) p1Points += p;
+        if (document.getElementById("word1").value != password) { p1Points += p; p1Guessed = true; p2Done = true; p3Done = true; }
         else p1Points = 9999;
         document.getElementById("p1").hidden = true;
         p1Done = true;
     } else if (player == 2) {
-        if (document.getElementById("word2").value != password) p2Points += p;
+        if (document.getElementById("word2").value != password) { p2Points += p; p2Guessed = true; p1Done = true; p3Done = true; }
         else p2Points = 9999;
         document.getElementById("p2").hidden = true;
         p2Done = true;
     } else if (player == 3) {
-        if (document.getElementById("word3").value != password) p3Points += p;
+        if (document.getElementById("word3").value != password) { p3Points += p; p3Guessed = true; p1Done = true; p2Done = true; }
         else p3Points = 9999;
         document.getElementById("p3").hidden = true;
         p3Done = true;
@@ -72,7 +75,7 @@ function pointsUp(p) {
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
     console.log(`P1: ${p1Points}\nP2: ${p2Points}\nP3: ${p3Points}`);
-    if ((p1Done && p2Done && p3Done) && !gameOver) whoWon();
+    if (((p1Guessed || p2Guessed || p3Guessed) && (p1Done && p2Done && p3Done)) && !gameOver) whoWon();
 }
 
 function whoWon() {
@@ -80,6 +83,11 @@ function whoWon() {
     gameOver = true;
     let sortScore = [p1Points, p2Points, p3Points];
     sortScore.sort(function (a, b) { return a - b });
+    if (p1Guessed || p2Guessed || p3Guessed) {
+        document.getElementById("p1").hidden = true;
+        document.getElementById("p2").hidden = true;
+        document.getElementById("p3").hidden = true;
+    }
     setTimeout(() => {
         txtWinner.hidden = false;
         isATie = (p1Points && p2Points) == parseInt(sortScore[2])
