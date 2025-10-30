@@ -88,14 +88,31 @@ function whoWon() {
             || (p1Points && p2Points && p3Points) == parseInt(sortScore[2])
         console.log(isATie);
         if (!isATie) {
-            if (p1Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 1");
-            if (p2Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 2");
-            if (p3Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 3");
+            if (p1Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 1"); txtP1Points.setAttribute("style", "color: green;"); }
+            if (p2Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 2"); txtP2Points.setAttribute("style", "color: green;"); }
+            if (p3Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 3"); txtP3Points.setAttribute("style", "color: green;"); }
         } else {
-            if ((p1Points && p2Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 1 y 2 están EMPATADOS"
-            if ((p1Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 1 y 3 están EMPATADOS"
-            if ((p2Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 2 y 3 están EMPATADOS"
-            if ((p1Points && p2Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Todos los jugadores están EMPATADOS"
+            if ((p1Points && p2Points) == parseInt(sortScore[2])) {
+                txtWinner.textContent = "Los jugadores 1 y 2 están EMPATADOS";
+                txtP1Points.setAttribute("style", "color: orange;");
+                txtP2Points.setAttribute("style", "color: orange;");
+            }
+            if ((p1Points && p3Points) == parseInt(sortScore[2])) {
+                txtWinner.textContent = "Los jugadores 1 y 3 están EMPATADOS";
+                txtP1Points.setAttribute("style", "color: orange;");
+                txtP3Points.setAttribute("style", "color: orange;");
+            }
+            if ((p2Points && p3Points) == parseInt(sortScore[2])) {
+                txtWinner.textContent = "Los jugadores 2 y 3 están EMPATADOS";
+                txtP2Points.setAttribute("style", "color: orange;");
+                txtP3Points.setAttribute("style", "color: orange;");
+            }
+            if ((p1Points && p2Points && p3Points) == parseInt(sortScore[2])) {
+                txtWinner.textContent = "Todos los jugadores están EMPATADOS";
+                txtP1Points.setAttribute("style", "color: orange;");
+                txtP2Points.setAttribute("style", "color: orange;");
+                txtP3Points.setAttribute("style", "color: orange;");
+            }
         }
     }, 1000);
 }
