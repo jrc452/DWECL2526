@@ -5,18 +5,19 @@ let p3Points = 0;
 const txtP1Points = document.getElementById("p1Points");
 const txtP2Points = document.getElementById("p2Points");
 const txtP3Points = document.getElementById("p3Points");
+const txtWinner = document.getElementById("winner");
 const password = "j0taR3yC4lCu4tr0C1nc0S315";
 
 let p1Done = false;
 let p2Done = false;
 let p3Done = false;
-
 let gameOver = false;
 
 function start() {
     txtP1Points.textContent = `Puntos (P1): ${p1Points}`;
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
+    txtWinner.hidden = true;
 };
 
 function guessPswd(w, p) {
@@ -52,32 +53,49 @@ function wordSpliter(w) {
 
 function pointsUp(p) {
     if (player == 1) {
-        p1Points += p;
-        document.getElementById("word1").hidden = true;
-        document.getElementById("btn1").hidden = true;
+        if (document.getElementById("word1").value != password) p1Points += p;
+        else p1Points = 9999;
+        document.getElementById("p1").hidden = true;
         p1Done = true;
     } else if (player == 2) {
-        p2Points += p;
-        document.getElementById("word2").hidden = true;
-        document.getElementById("btn2").hidden = true;
+        if (document.getElementById("word2").value != password) p2Points += p;
+        else p2Points = 9999;
+        document.getElementById("p2").hidden = true;
         p2Done = true;
     } else if (player == 3) {
-        p3Points += p;
-        document.getElementById("word3").hidden = true;
-        document.getElementById("btn3").hidden = true;
+        if (document.getElementById("word3").value != password) p3Points += p;
+        else p3Points = 9999;
+        document.getElementById("p3").hidden = true;
         p3Done = true;
     }
     txtP1Points.textContent = `Puntos (P1): ${p1Points}`;
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
+    console.log(`P1: ${p1Points}\nP2: ${p2Points}\nP3: ${p3Points}`);
     if ((p1Done && p2Done && p3Done) && !gameOver) whoWon();
 }
 
 function whoWon() {
+    let isATie = false;
     gameOver = true;
     let sortScore = [p1Points, p2Points, p3Points];
     sortScore.sort(function (a, b) { return a - b });
-    if (parseInt(sortScore[2]) == p1Points) alert("El ganador es JUGADOR 1");
-    if (parseInt(sortScore[2]) == p2Points) alert("El ganador es JUGADOR 2");
-    if (parseInt(sortScore[2]) == p3Points) alert("El ganador es JUGADOR 3");
+    setTimeout(() => {
+        txtWinner.hidden = false;
+        isATie = (p1Points && p2Points) == parseInt(sortScore[2])
+            || (p1Points && p3Points) == parseInt(sortScore[2])
+            || (p2Points && p3Points) == parseInt(sortScore[2])
+            || (p1Points && p2Points && p3Points) == parseInt(sortScore[2])
+        console.log(isATie);
+        if (!isATie) {
+            if (p1Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 1");
+            if (p2Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 2");
+            if (p3Points == parseInt(sortScore[2])) txtWinner.textContent = ("El ganador es JUGADOR 3");
+        } else {
+            if ((p1Points && p2Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 1 y 2 están EMPATADOS"
+            if ((p1Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 1 y 3 están EMPATADOS"
+            if ((p2Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Los jugadores 2 y 3 están EMPATADOS"
+            if ((p1Points && p2Points && p3Points) == parseInt(sortScore[2])) txtWinner.textContent = "Todos los jugadores están EMPATADOS"
+        }
+    }, 1000);
 }
