@@ -56,18 +56,18 @@ function wordSpliter(w) {
 
 function pointsUp(p) {
     if (player == 1) {
-        if (document.getElementById("word1").value != password) { p1Points += p; p1Guessed = true; p2Done = true; p3Done = true; }
-        else p1Points = 9999;
+        if (document.getElementById("word1").value != password) p1Points += p;
+        else { p1Points = 9999; p1Guessed = true; p2Done = true; p3Done = true; };
         document.getElementById("p1").hidden = true;
         p1Done = true;
     } else if (player == 2) {
-        if (document.getElementById("word2").value != password) { p2Points += p; p2Guessed = true; p1Done = true; p3Done = true; }
-        else p2Points = 9999;
+        if (document.getElementById("word2").value != password) p2Points += p;
+        else { p2Points = 9999; p2Guessed = true; p1Done = true; p3Done = true; };
         document.getElementById("p2").hidden = true;
         p2Done = true;
     } else if (player == 3) {
-        if (document.getElementById("word3").value != password) { p3Points += p; p3Guessed = true; p1Done = true; p2Done = true; }
-        else p3Points = 9999;
+        if (document.getElementById("word3").value != password) p3Points += p;
+        else { p3Points = 9999; p3Guessed = true; p1Done = true; p2Done = true; };
         document.getElementById("p3").hidden = true;
         p3Done = true;
     }
@@ -75,7 +75,7 @@ function pointsUp(p) {
     txtP2Points.textContent = `Puntos (P2): ${p2Points}`;
     txtP3Points.textContent = `Puntos (P3): ${p3Points}`;
     console.log(`P1: ${p1Points}\nP2: ${p2Points}\nP3: ${p3Points}`);
-    if (((p1Guessed || p2Guessed || p3Guessed) && (p1Done && p2Done && p3Done)) && !gameOver) whoWon();
+    if (((p1Guessed || p2Guessed || p3Guessed) || (p1Done && p2Done && p3Done)) && !gameOver) whoWon();
 }
 
 function whoWon() {
