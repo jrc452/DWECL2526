@@ -99,6 +99,7 @@ function whoWon() {
             if (p1Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 1"); txtP1Points.setAttribute("style", "color: green;"); }
             if (p2Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 2"); txtP2Points.setAttribute("style", "color: green;"); }
             if (p3Points == parseInt(sortScore[2])) { txtWinner.textContent = ("El ganador es JUGADOR 3"); txtP3Points.setAttribute("style", "color: green;"); }
+            if (p1Guessed || p2Guessed || p3Guessed) txtWinner.textContent += "\n¡ENHORABUENA, HAS ADIVINADO LA CONSTRSEÑA CORRECTA!";
         } else {
             if ((p1Points && p2Points) == parseInt(sortScore[2])) {
                 txtWinner.textContent = "Los jugadores 1 y 2 están EMPATADOS";
