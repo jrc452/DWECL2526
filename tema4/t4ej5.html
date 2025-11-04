@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejercicio 5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px grey;
+            width: 600px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imagenDiv">
+        <img alt="Una imagen" id="image">
+    </div>
+    <p id="url"></p>
+    <script type="text/javascript">
+        const image = document.getElementById("image");
+        const url = document.getElementById("url");
+        const img1 = "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg"
+        const img2 = "https://images.pexels.com/photos/2764993/pexels-photo-2764993.jpeg"
+        const img3 = "https://images.pexels.com/photos/34600/pexels-photo.jpg"
+        const random = Math.ceil(Math.random() * 3);
+        window.onload = function () {
+            url.hidden = true;
+            if (random === 1) { image.setAttribute("src", img1); url.textContent = img1; }
+            else if (random === 2) { image.setAttribute("src", img2); url.textContent = img2; }
+            else if (random === 3) { image.setAttribute("src", img3); url.textContent = img3; }
+        }
+
+        image.onmouseenter = hoverImg;
+        image.onmouseleave = hoverImg;
+
+        function hoverImg(e) {
+            if (e.type === "mouseenter") url.hidden = false;
+            else if (e.type === "mouseleave") url.hidden = true;
+        }
+    </script>
+</body>
+
+</html>

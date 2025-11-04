@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejercicio 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script type="text/javascript">
+        const white = "#00000";
+        const yellow = "#FFFF00";
+        const blue = "#CCE6FF";
+
+        window.onclick = bgColourFunction;
+        window.onkeyup = bgColourFunction;
+        window.onmousemove = bgColourFunction;
+
+        function bgColourFunction(e) {
+            let response = ""
+            if (e.type === "click") response = yellow
+            else if (e.type === "keyup") response = blue
+            else if (e.type === "mousemove") response = white
+            document.body.style = `background-color: ${response}`;
+        }
+    </script>
+</body>
+
+</html>
