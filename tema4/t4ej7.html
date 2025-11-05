@@ -8,7 +8,27 @@
 </head>
 
 <body>
+    <div id="box" style="background:#2fd360;height:50px;width:100px;position:relative;top:0px;left:0px;"></div>
     <script type="text/javascript">
+        let posX = 0, posY = 0, speed = 20;
+
+        window.onkeyup = moveBox;
+
+        function moveBox(e) {
+            if (posY >= 0) {
+                if (e.keyCode === 38 || e.keyCode === 104) posY -= speed;
+                if (e.keyCode === 40 || e.keyCode === 98) posY += speed;
+            } else posY = 0;
+            if (posX >= 0) {
+                if (e.keyCode === 39 || e.keyCode === 102) posX += speed;
+                if (e.keyCode === 37 || e.keyCode === 100) posX -= speed;
+            } else posX = 0;
+
+            document.getElementById("box").style.left = `${posX}px`;
+            document.getElementById("box").style.top = `${posY}px`;
+            console.log(document.getElementById("box").style.left);
+            console.log(document.getElementById("box").style.top);
+        }
     </script>
 </body>
 
