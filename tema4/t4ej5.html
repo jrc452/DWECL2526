@@ -6,42 +6,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
         img {
             border: 2px solid black;
             border-radius: 10px;
             box-shadow: 5px 5px 5px grey;
-            width: 600px;
-            height: auto;
+            height: 230px;
+            width: auto
+        }
+
+        .divs {
+            display: grid;
+            grid-template-columns: 370px 370px 370px;
+            height: 300px;
+        }
+
+        .divs div {
+            justify-content: center;
+            text-align: center;
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: small;
         }
     </style>
 </head>
 
 <body>
-    <div id="imagenDiv">
-        <img alt="Una imagen" id="image">
+    <div class="divs">
+        <div id="img1Div">
+            <img alt="Una imagen" id="img1" src="https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg">
+            <p id="url1"></p>
+        </div>
+        <div id="img2Div">
+            <img alt="Una imagen" id="img2" src="https://images.pexels.com/photos/2764993/pexels-photo-2764993.jpeg">
+            <p id="url2"></p>
+        </div>
+        <div id="img3Div">
+            <img alt="Una imagen" id="img3" src="https://images.pexels.com/photos/34600/pexels-photo.jpg">
+            <p id="url3"></p>
+        </div>
     </div>
-    <p id="url"></p>
     <script type="text/javascript">
-        const image = document.getElementById("image");
-        const url = document.getElementById("url");
-        const img1 = "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg"
-        const img2 = "https://images.pexels.com/photos/2764993/pexels-photo-2764993.jpeg"
-        const img3 = "https://images.pexels.com/photos/34600/pexels-photo.jpg"
-        const random = Math.ceil(Math.random() * 3);
         window.onload = function () {
-            url.hidden = true;
-            if (random === 1) { image.setAttribute("src", img1); url.textContent = img1; }
-            else if (random === 2) { image.setAttribute("src", img2); url.textContent = img2; }
-            else if (random === 3) { image.setAttribute("src", img3); url.textContent = img3; }
-        }
+            document.getElementById("url1").innerHTML = `${img1.src}`;
+            document.getElementById("url2").innerHTML = `${img2.src}`;
+            document.getElementById("url3").innerHTML = `${img3.src}`;
+            document.getElementById("url1").hidden = true;
+            document.getElementById("url2").hidden = true;
+            document.getElementById("url3").hidden = true;
+        };
 
-        image.onmouseenter = hoverImg;
-        image.onmouseleave = hoverImg;
+        const img1 = document.getElementById("img1");
+        const img2 = document.getElementById("img2");
+        const img3 = document.getElementById("img3");
 
-        function hoverImg(e) {
-            if (e.type === "mouseenter") url.hidden = false;
-            else if (e.type === "mouseleave") url.hidden = true;
-        }
+        ["mouseenter", "mouseleave"].forEach(event => {
+            img1.addEventListener(event, function (e) {
+                if (e.type === "mouseenter")
+                    document.getElementById("url1").hidden = false;
+                else
+                    document.getElementById("url1").hidden = true;
+            });
+        });
+
+        ["mouseenter", "mouseleave"].forEach(event => {
+            img2.addEventListener(event, function (e) {
+                if (e.type === "mouseenter")
+                    document.getElementById("url2").hidden = false;
+                else
+                    document.getElementById("url2").hidden = true;
+            });
+        });
+
+        ["mouseenter", "mouseleave"].forEach(event => {
+            img3.addEventListener(event, function (e) {
+                if (e.type === "mouseenter")
+                    document.getElementById("url3").hidden = false;
+                else
+                    document.getElementById("url3").hidden = true;
+            });
+        });
+
+
     </script>
 </body>
 
