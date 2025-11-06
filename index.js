@@ -31,6 +31,10 @@ function openFrame(url) {
         height: '0px',
     }, 1000);
     $("nav h4").animate({ 'line-height': '0', }, 1000);
+    $("nav a").animate({
+        'font-size': '3mm',
+        'line-height': '7mm',
+    }, 1000);
     setTimeout(() => {
         isOpen = true;
         document.getElementById("head").style.display = 'none';
