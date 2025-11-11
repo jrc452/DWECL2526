@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de palabras</title>
+</head>
+
+<body>
+    <p>Introduce un texto: <input type="text" id="phrase"></p>
+    <button onclick="countWords(phrase.value)">Contar palabras</button>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function countWords(phrase) {
+            const words = phrase.split(' ');
+            const counter = new Map();
+
+            words.forEach((word) => {
+                if (counter.has(word))
+                    counter.set(word, counter.get(word) + 1);
+                else
+                    counter.set(word, 1);
+            });
+
+            console.log(phrase);
+            console.log(counter);
+
+            document.getElementById("result").textContent = [...structuredClone(counter)];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz</title>
+    <style>
+        .result tr,
+        .result td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <caption>Introduce una matriz:</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input id="num1a" type="number" step="1"></td>
+                <td><input id="num2a" type="number" step="1"></td>
+                <td><input id="num3a" type="number" step="1"></td>
+            </tr>
+            <tr>
+                <td><input id="num4a" type="number" step="1"></td>
+                <td><input id="num5a" type="number" step="1"></td>
+                <td><input id="num6a" type="number" step="1"></td>
+            </tr>
+            <tr>
+                <td><input id="num7a" type="number" step="1"></td>
+                <td><input id="num8a" type="number" step="1"></td>
+                <td><input id="num9a" type="number" step="1"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <caption>Introduce otra matriz:</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input id="num1b" type="number" step="1"></td>
+                <td><input id="num2b" type="number" step="1"></td>
+                <td><input id="num3b" type="number" step="1"></td>
+            </tr>
+            <tr>
+                <td><input id="num4b" type="number" step="1"></td>
+                <td><input id="num5b" type="number" step="1"></td>
+                <td><input id="num6b" type="number" step="1"></td>
+            </tr>
+            <tr>
+                <td><input id="num7b" type="number" step="1"></td>
+                <td><input id="num8b" type="number" step="1"></td>
+                <td><input id="num9b" type="number" step="1"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" onclick="sumMatrices()">Sumar matrices</button>
+    <hr>
+    <table class="result">
+        <thead>
+            <caption>RESULTADO</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <p id="num1c"></p>
+                </td>
+                <td>
+                    <p id="num2c"></p>
+                </td>
+                <td>
+                    <p id="num3c"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="num4c"></p>
+                </td>
+                <td>
+                    <p id="num5c"></p>
+                </td>
+                <td>
+                    <p id="num6c"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="num7c"></p>
+                </td>
+                <td>
+                    <p id="num8c"></p>
+                </td>
+                <td>
+                    <p id="num9c"></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        function sumMatrices() {
+            const num1a = document.getElementById("num1a").value;
+            const num2a = document.getElementById("num2a").value;
+            const num3a = document.getElementById("num3a").value;
+            const num4a = document.getElementById("num4a").value;
+            const num5a = document.getElementById("num5a").value;
+            const num6a = document.getElementById("num6a").value;
+            const num7a = document.getElementById("num7a").value;
+            const num8a = document.getElementById("num8a").value;
+            const num9a = document.getElementById("num9a").value;
+            const num1b = document.getElementById("num1b").value;
+            const num2b = document.getElementById("num2b").value;
+            const num3b = document.getElementById("num3b").value;
+            const num4b = document.getElementById("num4b").value;
+            const num5b = document.getElementById("num5b").value;
+            const num6b = document.getElementById("num6b").value;
+            const num7b = document.getElementById("num7b").value;
+            const num8b = document.getElementById("num8b").value;
+            const num9b = document.getElementById("num9b").value;
+
+            let isTable1Full = (num1a && num2a && num3a && num4a && num5a && num6a && num7a && num8a && num9a) != "";
+            let isTable2Full = (num1b && num2b && num3b && num4b && num5b && num6b && num7b && num8b && num9b) != "";
+
+            if (isTable1Full && isTable2Full) {
+                const matriz1 = new Map([
+                    ["num1", num1a],
+                    ["num2", num2a],
+                    ["num3", num3a],
+                    ["num4", num4a],
+                    ["num5", num5a],
+                    ["num6", num6a],
+                    ["num7", num7a],
+                    ["num8", num8a],
+                    ["num9", num9a],
+                ]);
+
+                const matriz2 = new Map([
+                    ["num1", num1b],
+                    ["num2", num2b],
+                    ["num3", num3b],
+                    ["num4", num4b],
+                    ["num5", num5b],
+                    ["num6", num6b],
+                    ["num7", num7b],
+                    ["num8", num8b],
+                    ["num9", num9b],
+                ]);
+
+                const matrizRes = new Map([
+                    ["num1", 0],
+                    ["num2", 0],
+                    ["num3", 0],
+                    ["num4", 0],
+                    ["num5", 0],
+                    ["num6", 0],
+                    ["num7", 0],
+                    ["num8", 0],
+                    ["num9", 0],
+                ]);
+
+
+                matriz1.forEach((value, key) => {
+                    matrizRes.set(key, (parseInt(value) + parseInt(matriz2.get(key))));
+                })
+
+                matrizRes.forEach((value, key) => {
+                    document.getElementById(`${key}c`).textContent = value;
+                });
+            } else {
+                if (!isTable1Full && isTable2Full) alert("Deberías rellenar completamente la 1ª matriz");
+                else if (isTable1Full && !isTable2Full) alert("Deberías rellenar completamente la 2ª matriz");
+                else alert("Deberías rellenar completamente las dos matrizes");
+            }
+        }
+    </script>
+</body>
+
+</html>
