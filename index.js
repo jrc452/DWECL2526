@@ -4,18 +4,20 @@ let isOpen = false;
 
 buttons.forEach(button => {
     button.addEventListener('click', (event) => {
-        event.preventDefault();
-        openFrame();
-        if (!isOpen)
-            setTimeout(() => {
+        if (button.getAttribute('href') !== "tema4/flamenco") {
+            event.preventDefault();
+            openFrame();
+            if (!isOpen)
+                setTimeout(() => {
+                    const href = button.getAttribute('href');
+                    iframe.setAttribute('src', href);
+                }, 1000);
+            else {
                 const href = button.getAttribute('href');
                 iframe.setAttribute('src', href);
-            }, 1000);
-        else {
-            const href = button.getAttribute('href');
-            iframe.setAttribute('src', href);
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
 

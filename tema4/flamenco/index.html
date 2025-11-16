@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap">
+    <link rel="stylesheet" href="flamenco.css">
+    <title>Palos del Flamenco — Explorador</title>
+</head>
+
+<body>
+    <h1>Explorador de palos del flamenco</h1>
+
+    <div class="card">
+        <div class="small muted">Selecciona un palo para ver sus datos (compás, tempo, tipo de letra) y ver su
+            compás
+            dibujado:</div>
+
+        <label for="paloSelect">Palo:</label>
+        <select id="paloSelect" aria-label="Seleccionar palo">
+            <!-- opciones añadidas por JS -->
+        </select>
+
+        <div class="info-row">
+            <button id="mostrarTodos">Mostrar todos los datos</button>
+            <button id="mostrarCompas">Mostrar compás (dibujar)</button>
+        </div>
+
+        <div class="info-row">
+            <div class="small muted">O pedir un dato concreto del palo:</div>
+            <div class="radio-group" role="radiogroup" aria-label="Elegir dato">
+                <label><input type="radio" name="dato" value="palo" checked> Palo</label>
+                <label><input type="radio" name="dato" value="compas"> Compás</label>
+                <label><input type="radio" name="dato" value="tempo"> Tempo</label>
+                <label><input type="radio" name="dato" value="letra"> Tipo de letra</label>
+            </div>
+            <div style="margin-top:8px;">
+                <button id="pedirDato">Pedir dato seleccionado</button>
+            </div>
+        </div>
+
+        <div id="output" class="result" aria-live="polite"></div>
+
+        <div id="compasArea" style="margin-top:12px;"></div>
+    </div>
+    <script type="text/javascript" src="flamenco.js"></script>
+</body>
+
+</html>

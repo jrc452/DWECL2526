@@ -1,0 +1,102 @@
+body {
+    font-family: 'Metamorphous';
+    max-width: 900px;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    line-height: 1.5;
+    background-color: rgb(231, 222, 222);
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.card {
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+    margin-bottom: 16px;
+    background-color: white;
+    box-shadow: 4px 4px 6px black;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+}
+
+select,
+button {
+    padding: 8px 10px;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.compas {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.beat {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    min-width: 30px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.beat.strong {
+    font-weight: 700;
+    background: #f7f7f7;
+    border-color: #ccc;
+}
+
+.info-row {
+    margin-top: 10px;
+}
+
+.small {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.result {
+    margin-top: 10px;
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.muted {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.radio-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+footer {
+    margin-top: 18px;
+    color: #666;
+    font-size: 0.9rem;
+}
