@@ -1,20 +1,45 @@
 const buttons = document.querySelectorAll('nav a');
 const iframe = document.getElementById('ejFrame');
 let isOpen = false;
+let _height = '-1px';
 
 buttons.forEach(button => {
     button.addEventListener('click', (event) => {
         if (button.getAttribute('href') !== "tema4/flamenco") {
             event.preventDefault();
-            openFrame();
-            if (!isOpen)
+            switch (button.getAttribute('href')) {
+                case "tema1/t1ej1.html":
+                case "tema1/t1ej3.html":
+                case "tema1/t1ej5.html":
+                case "tema2/t2ej07.html":
+                case "tema2/t2ej11.html":
+                    _height = '100px';
+                    break;
+                case "tema1/t1ej2.html":
+                case "tema2/t2ej05.html":
+                case "tema2/t2ej12.html":
+                case "tema2/t2ej13.html":
+                case "tema2/t2ej14.html":
+                case "tema2/t2ej15.html":
+                    _height = '200px';
+                    break;
+                case "tema2/t2ej06.html":
+                    _height = '360px';
+                    break;
+                case "tema1/t1ej4.html":
+                    _height = '500px';
+                    break;
+                default:
+                    _height = '450px';
+            }
+            if (!isOpen || document.getElementById("ejFrame").style.height !== _height) {
+                iframe.setAttribute('src', "about:blank");
+                openFrame();
                 setTimeout(() => {
-                    const href = button.getAttribute('href');
-                    iframe.setAttribute('src', href);
+                    iframe.setAttribute('src', button.getAttribute('href'));
                 }, 1000);
-            else {
-                const href = button.getAttribute('href');
-                iframe.setAttribute('src', href);
+            } else {
+                iframe.setAttribute('src', button.getAttribute('href'));
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -23,7 +48,7 @@ buttons.forEach(button => {
 
 function openFrame(url) {
     $("iframe").animate({
-        height: '450px',
+        height: _height,
         margin: '6px',
         padding: '12px',
     }, 1000);
@@ -32,7 +57,9 @@ function openFrame(url) {
         padding: '0%',
         height: '0px',
     }, 1000);
-    $("nav h4").animate({ 'line-height': '0', }, 1000);
+    $("nav h4").animate({
+        'line-height': '0',
+    }, 1000);
     $("nav a").animate({
         'font-size': '3mm',
         'line-height': '7mm',
