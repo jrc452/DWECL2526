@@ -20,9 +20,24 @@ body {
 }
 
 .game {
+    position: ab;
     background-color: black;
     border-radius: 8px;
     padding: 8px;
     filter: blur(0.675px);
     box-shadow: 0 0 32px rgba(173, 255, 47, 0.5);
+}
+
+.game .player {
+    position: absolute;
+}
+
+.game .player p {
+    animation: blink 0.5s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        visibility: hidden;
+    }
 }
