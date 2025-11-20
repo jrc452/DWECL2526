@@ -1,0 +1,28 @@
+p {
+    color: greenyellow;
+    font-family: 'Ubuntu Mono';
+    font-size: 2em;
+    margin: 0;
+    padding: 0 10px;
+    letter-spacing: 0.5ch;
+    white-space: pre;
+}
+
+body {
+    background-image: repeating-linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(17, 34, 17) 2px, rgb(0, 0, 0) 4px);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.game {
+    background-color: black;
+    border-radius: 8px;
+    padding: 8px;
+    filter: blur(0.675px);
+    box-shadow: 0 0 32px rgba(173, 255, 47, 0.5);
+}

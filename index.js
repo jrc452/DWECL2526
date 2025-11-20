@@ -21,6 +21,7 @@ buttons.forEach(button => {
                 case "tema2/t2ej13.html":
                 case "tema2/t2ej14.html":
                 case "tema2/t2ej15.html":
+                case "tema4/laberinto":
                     _height = '200px';
                     break;
                 case "tema2/t2ej06.html":
