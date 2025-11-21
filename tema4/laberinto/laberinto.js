@@ -78,7 +78,7 @@ function update() {
 
 function resolverLaberinto(lab, x, y) {
     if ((x && y) >= 0 && (x && y) < 4) {
-        if (lab[y][x] == "F") { document.removeEventListener("keyup", move); }
+        if (lab[y][x] == "F") document.removeEventListener("keyup", move);
         return lab[y][x] == " " || lab[y][x] == "F";
     }
     else return false;
