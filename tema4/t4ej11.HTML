@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 4-5</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const fs = {
+            carpeta1: {
+                archivo1: "contenido1",
+                archivo2: "contenido2",
+                subcarpeta: {
+                    archivo3: "contenido3",
+                }
+            },
+            carpeta2: {
+                archivo4: "contenido4"
+            },
+        };
+
+        function listarArchivos(obj) {
+            let filenames = [];
+
+            for (const k in obj) {
+                const v = obj[k];
+                if (typeof v === 'object' && v !== null && !Array.isArray(v))
+                    filenames = filenames.concat(listarArchivos(v));
+                else filenames.push(k);
+            }
+
+            return filenames;
+        }
+        console.log(fs);
+        document.writeln(listarArchivos(fs));
+        console.log(listarArchivos(fs));
+    </script>
+</body>
+
+</html>

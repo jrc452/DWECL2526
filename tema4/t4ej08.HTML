@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <div>
+        <p>Nombre: <input id="nombre" type="text" /></p>
+        <p>Edad: <input id="edad" type="number" step="1" /></p>
+        <p>País: <input id="pais" type="text" /></p>
+    </div>
+    <button onclick="crearUsuario(nombre.value, parseInt(edad.value), pais.value)">Crear usuario</button>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function crearUsuario(nombre = "desconocido", edad = "desconocido", pais = "desconocido") {
+            console.log([nombre, `${edad} años`, pais]);
+            document.getElementById("result").textContent = [nombre, `${edad} años`, pais];
+        }
+    </script>
+</body>
+
+</html>

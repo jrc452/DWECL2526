@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <div>
+        <p>Número 1: <input id="n1" type="number" step="1" /></p>
+        <p>Número 2: <input id="n2" type="number" step="1" /></p>
+        <p>Operación: <select id="operatorSelect">
+                <option value="sumar">Sumar</option>
+                <option value="restar">Restar</option>
+                <option value="multiplicacion">Multiplicación</option>
+                <option value="suma_mul">Sumar + Multiplicación</option>
+            </select></p>
+        <button onclick="operar(n1.value,n2.value,operatorSelect.value)">Calcular</button>
+    </div>
+    <hr>
+    <p id="result"></p>
+    <script type="text/javascript">
+        function operar(num1 = 0, num2 = 0, operacion = "sumar") {
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            if ((num1 && num2) != null) {
+                if (operacion === "sumar")
+                    document.getElementById("result").textContent = `${num1} + ${num2} = ${num1 + num2}`;
+                if (operacion === "resta")
+                    document.getElementById("result").textContent = `${num1} - ${num2} = ${num1 - num2}`;
+                if (operacion === "multiplicacion")
+                    document.getElementById("result").textContent = `${num1} &#x00d7; ${num2} = ${num1 * num2}`;
+                if (operacion === "suma_mul")
+                    document.getElementById("result").textContent = `${num1} + ${num2} = ${num1 + num2} + ${num1 * num2} = ${(num1 + num2) + (num1 * num2)}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

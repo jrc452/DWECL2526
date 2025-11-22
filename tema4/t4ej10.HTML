@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <p id="original"></p>
+    <hr>
+    <p id="result"></p>
+
+    <script type="text/javascript">
+        function aplanar(array) {
+            let plainArray = [];
+            for (const e of array)
+                if (Array.isArray(e))
+                    plainArray = plainArray.concat(aplanar(e));
+                else plainArray.push(e);
+
+            return plainArray;
+        }
+
+        document.getElementById("original").textContent = "[1, [2, [3, 4]], 5]";
+        console.log([1, [2, [3, 4]], 5]);
+        document.getElementById("result").textContent = aplanar([1, [2, [3, 4]], 5]);
+        console.log(aplanar([1, [2, [3, 4]], 5]));
+    </script>
+</body>
+
+</html>
