@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="t4ej14.css">
+    <title>Ejercicio 14</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="fixedNumMenu">
+            <h2>Número fijo</h2>
+            <input type="number" step="1" id="fixedNum" />
+            <br>
+            <button onclick="setFixedNum(parseInt(fixedNum.value))">Seleccionar número fijado</button>
+        </div>
+        <div id="addNumMenu">
+            <h2>Número</h2>
+            <input type="number" step="2" id="addNum" />
+            <br>
+            <button onclick="getResult(parseInt(addNum.value))">Suma fijada</button>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let func = undefined;
+
+        function setFixedNum(n) {
+            func = additionFunction(n);
+            document.getElementById("fixedNumMenu").style.display = "none";
+            document.getElementById("addNumMenu").style.display = "block";
+        };
+
+        function getResult(addNum) { document.getElementById("result").textContent = func(addNum); }
+
+        function additionFunction(fixedNum) { return function (otherNum) { return fixedNum + otherNum; } }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+
+<body>
+    <div>
+        <input type="number" step="1" id="num">
+        <button id="addNumBtn" onclick="addNum2Arr(parseInt(num.value))">Añadir número al array</button>
+        <button id="permutarBtn" style="display:none;" onclick="getResult()">Permutar</button>
+    </div>
+    <hr>
+    <p id="arr"></p>
+    <hr>
+    <p id="result"></p>
+
+    <script>
+        let arr = [];
+        const result = [];
+
+        function addNum2Arr(num) {
+            if (!isNaN(num)) {
+                arr.push(num);
+                document.getElementById("arr").textContent = arr;
+                document.getElementById("num").value = null;
+                document.getElementById("permutarBtn").style.display = "block";
+            }
+        }
+
+        function permutar(arr) {
+            document.getElementById("addNumBtn").style.display = "none";
+            document.getElementById("permutarBtn").style.display = "none";
+
+            if (arr.length < 2) {
+                document.getElementById("addNumBtn").style.display = "block";
+                document.getElementById("permutarBtn").style.display = "block";
+                return arr;
+            }
+
+            for (i = 0; i < arr.length; i++) {
+                const elemActual = arr[i];
+                const resto = arr.slice(0, i).concat(arr.slice(i + 1));
+                const subPermutaciones = permutar(resto);
+
+                for (j = 0; j < subPermutaciones.length; j++) {
+                    result.push([elemActual].concat(subPermutaciones[j]));
+                    debugger;
+                }
+            }
+            document.getElementById("addNumBtn").style.display = "block";
+            document.getElementById("permutarBtn").style.display = "block";
+            return result;
+        }
+
+        function getResult() {
+            document.getElementById("result").textContent = permutar(arr).toString();
+            console.log(permutar(arr));
+        }
+    </script>
+</body>
+
+</html>

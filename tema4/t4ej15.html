@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata">
+    <link rel="stylesheet" href="t4ej15.css">
+    <title>Ejercicio 15</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Cadena</h2>
+        <input onchange="clearResult()" type="text" id="str" />
+        <button onclick="isLargerThan10(str.value)">Comprobar si tiene más de 10 caracteres</button>
+        <div class="result">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const result = document.getElementById("result");
+
+        const isLargerThan10 = function (str) {
+            if (str.length > 10) result.textContent = "Esto tiene más de 10 caracteres";
+            else result.textContent = "Esto tiene menos de 10 caracteres";
+        }
+
+        function clearResult() { result.textContent = null; }
+    </script>
+</body>
+
+</html>

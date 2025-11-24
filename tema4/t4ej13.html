@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo">
+    <link rel="stylesheet" href="t4ej13.css">
+    <title>Ejercicio 13</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Número 1</h2>
+        <input onchange="clearResult()" type="number" step="1" id="num1" />
+        <h2>Número 2</h2>
+        <input onchange="clearResult()" type="number" step="2" id="num2" />
+        <h2>Operador</h2>
+        <select onchange="clearResult()" id="operator">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+        </select>
+        <button onclick="operar(parseInt(num1.value),parseInt(num2.value),operator.value)">Operar</button>
+        <div class="result">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const resultScreen = document.getElementById("result");
+
+        function operar(a, b, callback) {
+            if (!isNaN(a) && !isNaN(b)) resultScreen.textContent = eval(`${callback}(a, b)`);
+        }
+
+        function suma(a, b) {
+            if ((a && b) !== undefined) return `${a} + ${b} = ${a + b}`; return undefined;
+        }
+
+        function resta(a, b) {
+            if ((a && b) !== undefined) return `${a} - ${b} = ${a - b}`; return undefined;
+        }
+
+        function multiplicacion(a, b) {
+            if ((a && b) !== undefined) return `${a} ×; ${b} = ${a - b}`; return undefined;
+        }
+
+        function clearResult() { resultScreen.textContent = null; }
+    </script>
+</body>
+
+</html>
