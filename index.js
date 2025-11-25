@@ -25,10 +25,15 @@ buttons.forEach(button => {
                     _height = '200px';
                     break;
                 case "tema2/t2ej06.html":
+                case "tema4/t4ej14.html":
+                case "tema4/t4ej15.html":
                     _height = '360px';
                     break;
                 case "tema1/t1ej4.html":
                     _height = '500px';
+                    break;
+                case "tema4/t4ej13.html":
+                    _height = '540px';
                     break;
                 default:
                     _height = '450px';
@@ -39,9 +44,7 @@ buttons.forEach(button => {
                 setTimeout(() => {
                     iframe.setAttribute('src', button.getAttribute('href'));
                 }, 1000);
-            } else {
-                iframe.setAttribute('src', button.getAttribute('href'));
-            }
+            } else iframe.setAttribute('src', button.getAttribute('href'));
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
