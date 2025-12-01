@@ -38,16 +38,23 @@ const añadirProducto = () => {
 // 2. ELIMINAR PRODUCTO
 
 const eliminarProducto = (id) => {
-    if (carrito.length === 1)
-        carrito.pop();
-    else if (carrito.length > 1)
-        for (i = 0; i < carrito.length; i++)
-            if (carrito[i].id === id) {
-                carrito.splice(i, 1);
-                renderizarCarrito();
-                return;
-            }
+    for (i = 0; i < carrito.length; i++)
+        if (carrito[i].id === id) {
+            carrito.splice(i, 1);
+            renderizarCarrito();
+            return;
+        }
 };
+
+// 3. CAMBIAR CANTIDAD
+const cambiarCantidad = (a, b) => {
+    for (i = 0; i < carrito.length; i++)
+        if (carrito[i].id === a) {
+            carrito[i].cantidad = b;
+            renderizarCarrito();
+            return;
+        }
+}
 
 // 4. CALCULAR TOTALES
 const calcularTotales = () => {
