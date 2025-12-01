@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Arrow Functions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Carrito de Compras con Arrow Functions</h1>
+
+    <!-- Formulario para añadir productos -->
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h3>Añadir Producto</h3>
+        <input type="text" id="nombre" placeholder="Nombre del producto" style="margin-right:10px; padding: 8px;">
+        <input type="number" id="precio" placeholder="Precio (€)" step="0.01" style="margin-right: 10px; padding: 8px;">
+        <button onclick="añadirProducto()"> Añadir</button>
+    </div>
+
+    <!-- Lista de productos -->
+    <div id="listaProductos"></div>
+
+    <!-- Total y botones -->
+    <div id="totalContainer" style="margin-top: 20px; text-align: right;"></div>
+
+    <script src="gestionDeCarritoDeCompra.js"></script>
+</body>
+
+</html>
