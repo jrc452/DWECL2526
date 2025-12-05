@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="t4ej19.css">
+    <title>Ejercicio 19 — Funciones anónimas (expresiones de función / arrow functions)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Funciones anónimas</h2>
+        <p class="array" id="array"> </p>
+        <div>
+            <label for="num">Agregar un número:</label>
+            <input type="number" step="1" name="_num" id="_num">
+            <button onclick="addNum(parseInt(_num.value))">Agregar</button>
+        </div>
+        <div>
+            <label for="filter">Filtro:</label>
+            <select class="filter" id="filter">
+                <option value="n => n % 2 === 0">Filtrar números pares</option>
+                <option value="n => n % 2 === 1">Filtrar números impares</option>
+            </select>
+        </div>
+        <div>
+            <label for="transform">Transformación:</label>
+            <select class="transform" id="transform">
+                <option value="n => n * n">Transformación al cuadrado</option>
+            </select>
+        </div>
+        <p class="result" id="result"> </p>
+        <button
+            onclick="getResult(_array, eval(document.getElementById('filter').value), eval(document.getElementById('transform').value))">Filtrar</button>
+        <button onclick="resetFunctions()">Reiniciar</button>
+    </div>
+    <script>
+        const _array = [];
+
+        function filtrarYTransformar(arr, filtro, transformacion) {
+            if (arr.length < 1) return _array;
+            return arr.filter(filtro).map(transformacion);
+        }
+
+        const addNum = (num) => {
+            if (isNaN(num)) return;
+            _array.push(num);
+            document.getElementById("_num").value = null;
+            document.getElementById("array").textContent = _array;
+        };
+
+        const getResult = (a, b, c) => {
+            console.log(filtrarYTransformar(a, b, c));
+            if (_array.length < 1)
+                document.getElementById("result").textContent = " ";
+            else
+                document.getElementById("result").textContent = filtrarYTransformar(a, b, c);
+        };
+
+        const resetFunctions = () => {
+            while (_array.length > 0) _array.pop();
+            document.getElementById("array").textContent = " ";
+            document.getElementById("result").textContent = " ";
+            document.getElementById("_num").value = null;
+        }
+    </script>
+</body>
+
+</html>

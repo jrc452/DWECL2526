@@ -8,6 +8,7 @@ buttons.forEach(button => {
         switch (button.getAttribute('href')) {
             case "tema4/flamenco/":
             case "tema4/gestionDeCarritoDeCompra/":
+            case "tema4/t4ej20.html":
                 break;
             default:
                 event.preventDefault();
@@ -31,13 +32,18 @@ buttons.forEach(button => {
                     case "tema2/t2ej06.html":
                     case "tema4/t4ej14.html":
                     case "tema4/t4ej15.html":
+                    case "tema4/t4ej18.html":
                         _height = '360px';
                         break;
                     case "tema1/t1ej4.html":
                         _height = '500px';
                         break;
                     case "tema4/t4ej13.html":
+                    case "tema4/t4ej17.html":
                         _height = '540px';
+                        break;
+                    case "tema4/t4ej19.html":
+                        _height = '560px';
                         break;
                     default:
                         _height = '450px';

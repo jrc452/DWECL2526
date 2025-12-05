@@ -1,0 +1,96 @@
+body {
+    margin: 2em;
+    padding: 0;
+    display: grid;
+    grid-column: 4 4;
+    gap: 1rem;
+    background-color: rgb(140, 141, 150);
+    background-image: repeating-linear-gradient(-45deg,
+            hsla(0, 0%, 0%, 0.05),
+            hsla(0, 0%, 0%, 0.05) 1px,
+            hsla(0, 0%, 0%, 0) 1px,
+            hsla(0, 0%, 0%, 0) 5px);
+    background-size: 1em 1em;
+}
+
+main,
+section {
+    background-image: repeating-linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(17, 34, 17) 2px, rgb(0, 0, 0) 4px);
+    border-radius: 2em;
+    color: greenyellow;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.5em;
+    padding: 1em;
+    letter-spacing: 0.5ch;
+    line-height: 0;
+    white-space: pre;
+    border: 4px inset rgb(195, 195, 196);
+}
+
+main {
+    grid-area: span 2 / 1;
+}
+
+aside {
+    text-align: center;
+    grid-area: 1 / 2;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+aside>input,
+aside>select {
+    background-image: repeating-linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(17, 34, 17) 2px, rgb(0, 0, 0) 4px);
+    border-radius: 2em;
+    color: greenyellow;
+    font-family: 'Ubuntu Mono';
+    font-size: 1.5em;
+    padding: 0.5em;
+    border: 4px inset rgb(195, 195, 196);
+}
+
+aside>button {
+    color: rgb(241, 241, 241);
+    font-weight: bolder;
+    text-shadow:
+        1px 2px 0 #4d4d4d,
+        -1px 1px 0 #5f5f5f,
+        2px -1px 0 #b8b6b6,
+        0 -0 8px #5c5757;
+    background-image: repeating-linear-gradient(-45deg, rgb(195, 198, 204) 0%, rgb(246, 251, 255) 100%);
+    border-radius: 2em;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 4px outset rgb(195, 195, 196);
+}
+
+aside>button:disabled {
+    opacity: 0.5;
+    background-image: repeating-linear-gradient(-45deg, rgb(127, 131, 138) 0%, rgb(183, 187, 190) 100%);
+}
+
+aside>button:enabled:active {
+    background-image: repeating-linear-gradient(45deg, rgb(195, 198, 204) 0%, rgb(155, 167, 175) 100%);
+    border: 4px inset rgb(195, 195, 196);
+}
+
+section {
+    grid-area: 2 / 2;
+}
+
+aside *,
+section * {
+    font-family: 'Exo';
+}
+
+aside>label,
+section>label {
+    color: rgb(204, 204, 204);
+    font-weight: bolder;
+    text-shadow:
+        1px 1px 0 #4d4d4d,
+        -1px 1px 0 #5f5f5f,
+        1px -1px 0 #b8b6b6;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="t4ej18.css">
+    <title>Ejercicio 18 — Recursividad</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Recursividad</h2>
+        <div>
+            <label for="num">Número:</label>
+            <input type="number" step="1" name="_num" id="_num">
+        </div>
+        <p class="result" id="result"> </p>
+        <button onclick="getResult(parseInt(_num.value))">Calcular</button>
+    </div>
+    <script>
+        function sumarHasta(n = 0) {
+            if (n < 1) return 0; return n + sumarHasta(n - 1);
+        }
+
+        const getResult = (n) => {
+            console.log(sumarHasta(n));
+            if (isNaN(n)) document.getElementById("result").textContent = " ";
+            else document.getElementById("result").textContent = sumarHasta(n);
+        }
+    </script>
+</body>
+
+</html>
