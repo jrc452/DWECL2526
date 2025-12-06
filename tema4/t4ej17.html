@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="t4ej17.css">
+    <title>Ejercicio 17 — Arrays y caracteres</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Arrays y caracteres</h2>
+        <p class="array" id="array"> </p>
+        <div>
+            <label for="_str">Agregar una cadena:</label>
+            <input type="text" name="_str" id="_str">
+            <button onclick="addString(_str.value)">Agregar</button>
+        </div>
+        <p class="result" id="rWords"> </p>
+        <p class="result" id="rVocals"> </p>
+        <button onclick="getResult(_array)">Capitalizar y contar vocales</button>
+        <button onclick="resetFunctions()">Reiniciar</button>
+    </div>
+    <script>
+        const _array = [];
+
+        function capitalizarYContarVocales(words) {
+            if (typeof (words) !== "object") return words;
+
+            const vocales = ['a', 'e', 'i', 'o', 'u'];
+            let totalVocales = 0;
+
+            for (let i = 0; i < words.length; i++)
+                if (words[i].length > 1)
+                    words[i] = `${words[i].slice(0, 1).toUpperCase()}${words[i].slice(1).toLowerCase()}`;
+                else words[i] = words[i].toUpperCase();
+
+            vocales.forEach(v => {
+                words.forEach(w => {
+                    for (let c = 0; c < w.length; c++)
+                        if (w.charAt(c).toLowerCase() === v) totalVocales++;
+                });
+            });
+            return { palabras: words, totalVocales: totalVocales };
+        }
+
+        const addString = (_str) => {
+            if (_str === "") return;
+            _array.push(_str);
+            document.getElementById("_str").value = null;
+            document.getElementById("array").textContent = _array;
+        };
+
+        const getResult = (w) => {
+            console.log(capitalizarYContarVocales(w));
+            if (_array.length < 1) {
+                document.getElementById("rWords").textContent = " ";
+                document.getElementById("rVocals").textContent = " ";
+            }
+            else {
+                document.getElementById("rWords").textContent = capitalizarYContarVocales(w).palabras;
+                document.getElementById("rVocals").textContent = `${capitalizarYContarVocales(w).totalVocales} vocales abiertas`;
+            }
+        };
+
+        const resetFunctions = () => {
+            while (_array.length > 0) _array.pop();
+            document.getElementById("array").textContent = " ";
+            document.getElementById("rWords").textContent = " ";
+            document.getElementById("rVocals").textContent = " ";
+            document.getElementById("_str").value = null;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="t4ej20.css">
+    <title>Ejercicio 20 — Callbacks y funciones en línea (asincronía simulada con setTimeout)</title>
+</head>
+
+<body>
+    <main>
+        <p id="task1"> </p>
+        <p id="task2"> </p>
+        <p id="task3"> </p>
+        <p id="task4"> </p>
+        <p id="task5"> </p>
+        <p id="task6"> </p>
+        <p id="task7"> </p>
+        <p id="task8"> </p>
+        <p id="task9"> </p>
+        <p id="task10"> </p>
+        <p id="task11"> </p>
+        <p id="task12"> </p>
+        <p id="task13"> </p>
+        <p id="task14"> </p>
+        <p id="task15"> </p>
+        <p id="task16"> </p>
+        <p id="task17"> </p>
+        <p id="task18"> </p>
+        <p id="task19"> </p>
+        <p id="task20"> </p>
+        <p id="task21"> </p>
+        <p id="task22"> </p>
+        <p id="task23"> </p>
+        <p id="task24"> </p>
+        <p id="task25"> </p>
+        <p id="task26"> </p>
+    </main>
+    <aside>
+        <label for="duracion">Timeout (en segundos)</label>
+        <input type="number" step="1" name="duracion" id="duracion">
+        <button id="addTask">Añadir tarea</button>
+        <label for="callback">Callback</label>
+        <select name="callback" id="callback" disabled>
+            <option value="printScreen">Pantalla integrada</option>
+            <option value="alert">Alert</option>
+        </select>
+        <button id="execute" disabled>Ejecutar</button>
+        <button onclick="window.location.reload()">Reiniciar</button>
+    </aside>
+    <section id="screen">
+        <p> </p>
+    </section>
+    <script src="t4ej20.js"></script>
+</body>
+
+</html>
