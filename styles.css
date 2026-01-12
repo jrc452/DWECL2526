@@ -12,8 +12,15 @@ body {
     color: white;
 }
 
-header {
+header h1,
+header p {
     line-height: 3mm;
+}
+
+@media screen and (max-width: 721px) {
+    header h1 {
+        line-height: 8mm;
+    }
 }
 
 header,
@@ -24,11 +31,10 @@ nav {
     border-radius: 25px;
     text-shadow: 4px 4px 2px #0033cc;
     box-shadow: 4px 4px 2px #0033cc;
-    display: block;
 }
 
 nav h4 {
-    line-height: 10mm;
+    line-height: 5mm;
 }
 
 main {

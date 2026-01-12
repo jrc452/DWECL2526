@@ -1,3 +1,5 @@
+"use strict";
+
 const buttons = document.querySelectorAll('nav a');
 const iframe = document.getElementById('ejFrame');
 let isOpen = false;
