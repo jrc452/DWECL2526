@@ -5,7 +5,8 @@ const capitals = [
     "PARÍS",
     "LISBOA",
     "ROMA",
-    "BERLÍN"
+    "LONDRES",
+    "DUBLÍN"
 ];
 
 const currentCapital = capitals[Math.floor(Math.random() * capitals.length)];
@@ -18,7 +19,7 @@ function checkCapital(word) {
 }
 
 function clearInput() {
-    document.getElementById("yourword").value = null;
+    document.getElementById("_youranswer").value = null;
 }
 
 function tryAgain() {
@@ -32,11 +33,13 @@ function tryAgain() {
 }
 
 function youWin() {
+    document.getElementById("_youranswer").disabled = true;
     document.getElementById("checkBtn").disabled = true;
-    alert("¡Correcto! La capital era " + currentCapital);
+    document.getElementById("answer").textContent = "¡Correcto! La capital era " + currentCapital;
 }
 
 function gameOver() {
+    document.getElementById("_youranswer").disabled = true;
     document.getElementById("checkBtn").disabled = true;
-    alert("La capital era " + currentCapital);
+    document.getElementById("answer").textContent = "La capital era " + currentCapital;
 }
