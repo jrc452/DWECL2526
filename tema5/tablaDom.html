@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo</title>
+    <link rel="stylesheet" href="tablaDom.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Registro de Alumnos</h3>
+        <form id="formularioAlumno">
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="correo" placeholder="Email" required>
+            <input type="number" id="nota" placeholder="Nota" required>
+            <button type="submit">Agregar a la lista</button>
+            <button id="borrar" onclick="eliminarUltimoRegistro()" disabled>Borrar último registro</button>
+        </form>
+
+        <table id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table>
+    </div>
+
+    <script src="tablaDom.js"></script>
+</body>
+
+</html>
