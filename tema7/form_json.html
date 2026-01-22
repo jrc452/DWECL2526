@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario JSON</title>
+    <link rel="stylesheet" href="form_json.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Listado con Persistencia</h2>
+        <form id="formAlumno">
+            <input type="text" id="nombre" placeholder="Nombre del alumno" required>
+            <input type="text" id="apellidos" placeholder="Apellidos del alumno" required>
+            <input type="number" id="edad" placeholder="Edad del alumno" min="0" required>
+            <input type="number" id="nota" placeholder="Nota del alumno" min="0" max="10" required>
+            <input type="number" id="movil" placeholder="Móvil del alumno" maxlength="9" required>
+            <div class="botones">
+                <button type="submit" class="btn-add">Añadir Alumno</button>
+                <button type="button" id="btnBorrarTodo" class="btn-clear">Borrar Todo</button>
+                <hr>
+                <button type="button" id="btnGuardar" class="btn-save">Exportar JSON</button>
+                <button type="button" id="btnCargar" class="btn-load" accept=".json">Importar JSON</button>
+            </div>
+        </form>
+
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Edad</th>
+                    <th>Nota</th>
+                    <th>Móvil</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo"></tbody>
+        </table>
+    </div>
+
+    <script src="form_json.js"></script>
+    <!--
+    En base al ejemplo dado, amplia el ejemplo.
+
+    ¿puedes controlar que el  movil tenga 9 digitos exactos y empiece por 6?
+    Añade un boton para que se descargue el archivo json?
+    Añade un botón para que puedas subir un archivo json y modifique el localstorage? Por ejemplo las notas del alumno. 
+    -->
+
+</body>
+
+</html>

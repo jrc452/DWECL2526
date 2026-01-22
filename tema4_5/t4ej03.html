@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 
 <head>
-    <title>Ejercicio 6</title>
+    <title>Ejercicio 3</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <script type="text/javascript">
-        window.onkeyup = keyFunction;
-
-        function keyFunction(e) {
-            alert(e.key);
-        }
+        window.oncontextmenu = function (e) {
+            e.preventDefault();
+        };
     </script>
 </body>
 
