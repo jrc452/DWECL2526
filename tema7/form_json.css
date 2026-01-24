@@ -58,6 +58,10 @@ button {
     background-color: rgb(230, 123, 23);
 }
 
+#fileinput {
+    display: none;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
