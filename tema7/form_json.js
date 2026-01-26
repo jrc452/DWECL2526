@@ -16,8 +16,6 @@ renderizar();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (document.getElementById('movil').value.length !== 9 || document.getElementById('movil').value.charAt(0) != 6) return;
-
     const nuevo = {
         nombre: document.getElementById('nombre').value,
         apellidos: document.getElementById('apellidos').value,
