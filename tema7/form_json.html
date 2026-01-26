@@ -17,7 +17,7 @@
             <input type="text" id="apellidos" placeholder="Apellidos del alumno" required>
             <input type="number" id="edad" placeholder="Edad del alumno" min="0" required>
             <input type="number" id="nota" placeholder="Nota del alumno" min="0" max="10" required>
-            <input type="number" id="movil" placeholder="Móvil del alumno" maxlength="9" required>
+            <input type="tel" id="movil" placeholder="Móvil del alumno" pattern="^6\d{8}$" maxlength="9" required>
             <div class="botones">
                 <button type="submit" class="btn-add">Añadir Alumno</button>
                 <button type="button" id="btnBorrarTodo" class="btn-clear">Borrar Todo</button>

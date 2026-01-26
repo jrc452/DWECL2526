@@ -16,8 +16,6 @@ renderizar();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (document.getElementById('movil').value.length !== 9 || document.getElementById('movil').value.charAt(0) != 6) return;
-
     const nuevo = {
         nombre: document.getElementById('nombre').value,
         apellidos: document.getElementById('apellidos').value,
@@ -58,19 +56,7 @@ document.getElementById("fileinput").addEventListener('change', (e) => {
     reader.onload = function (e) {
         try {
             const data = JSON.parse(e.target.result);
-            data.forEach(d => {
-                const jsonData = {};
-                Object.entries(d).forEach((h, c) => {
-                    if (c > 0) {
-                        if (c === 1) jsonData.nombre = h[1];
-                        if (c === 2) jsonData.apellidos = h[1];
-                        if (c === 3) jsonData.edad = h[1];
-                        if (c === 4) jsonData.nota = h[1];
-                        if (c === 5) jsonData.movil = h[1];
-                    }
-                });
-                alumnos.push(jsonData);
-            });
+            data.forEach(d => { alumnos.push(d); });
             guardarYSincronizar(); // Guardamos y pintamos
             form.reset();
         } catch (error) { }
@@ -111,23 +97,7 @@ function renderizar() {
 
 // --- 4. GUARDAR COMO JSON ---
 function guardarComoJson() {
-    const table = document.getElementById("tabla");
-    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
-    const rows = Array.from(table.querySelectorAll('tbody tr'));
-    const data = rows.map(row => {
-        const cells = Array.from(row.querySelectorAll('td'));
-        let rowObject = {};
-
-        headers.forEach((h, i) => {
-            rowObject[h] = cells[i] ? cells[i].textContent.trim() : null;
-        });
-
-        return rowObject;
-    });
-
-    const json2string = JSON.stringify(data, null, 2);
-
-    const blob = new Blob([json2string], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(alumnos, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
