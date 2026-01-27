@@ -1,0 +1,43 @@
+body {
+    font-family: 'Mochiy Pop P One';
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebe6d5;
+}
+
+input {
+    padding: 0.75em;
+    border-radius: 1em;
+    text-align: center;
+    border: 2px inset #ebe6d5;
+}
+
+button {
+    font-family: 'Mochiy Pop P One';
+    color: white;
+    background: #e70000;
+    border: 0;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+table tbody td:first-child img {
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5))
+}
+
+table tbody td:nth-of-type(2) * {
+    background: #f5d693;
+    border-radius: 1em;
+    padding: 0.5em;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+table tbody td:nth-of-type(3) * {
+    background: #9cdd5f;
+    border-radius: 1em;
+    padding: 0.5em;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}

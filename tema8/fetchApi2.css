@@ -1,0 +1,26 @@
+body {
+    background: #e4e1dd;
+    font-family: 'Libre Baskerville';
+    text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Great Vibes';
+}
+
+button {
+    color: white;
+    font-family: 'Libre Baskerville';
+    font-weight: bolder;
+    background: #e70000;
+    border: 0;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+table td {
+    padding: 0px 1em;
+}
