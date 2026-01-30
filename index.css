@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-content: space-evenly;
     align-items: center;
-    background-color: #0066cc;
+    background: #0066cc;
     font-family: Alata;
     color: white;
 }
@@ -26,7 +26,7 @@ header p {
 header,
 nav {
     text-align: center;
-    background-color: #0066ff;
+    background: #0066ff;
     padding: 10px;
     border-radius: 25px;
     text-shadow: 4px 4px 2px #0033cc;
@@ -50,12 +50,12 @@ iframe {
     margin: 5px;
     padding: 0;
     border-radius: 25px;
-    background-color: white;
+    background: white;
     box-shadow: 4px 4px 2px #0033cc;
 }
 
 nav a {
-    background-color: #0099ff;
+    background: #0099ff;
     padding: 5px;
     white-space: nowrap;
     margin-inline: 1mm;
@@ -65,6 +65,15 @@ nav a {
     color: white;
     text-shadow: 2px 2px 1px #0066cc;
     box-shadow: 3px 3px 2px #0033cc;
+    transition-property: background, text-shadow;
+    transition-duration: 1s, 1s;
+}
+
+nav a:hover {
+    background: #61c0ff;
+    text-shadow: 2px 2px 2px #00457e;
+    transition-property: background, text-shadow;
+    transition-duration: .25s, .25s;
 }
 
 footer {
